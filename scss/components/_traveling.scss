@@ -1,0 +1,51 @@
+.traveling {
+  margin: 0 auto;
+  max-width: 100%;
+  height: 61.2rem;
+  background-image: url('../img/headerPic.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  border-radius: 4rem;
+  @include respond(phone) {
+    background-position: right;
+  }
+  .traveling__backgrond {
+    margin-left: 4rem;
+    max-width: 41.2rem;
+    align-self: center;
+    @include respond(phone) {
+      margin: 0;
+      padding: 25% 2rem 2rem;
+      max-width: 100%;
+      height: 100%;
+      border-radius: 4rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+  }
+
+  .search {
+    margin-top: 4rem;
+    padding: 1rem 0;
+    background-color: $color-primary;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .search__city,
+    .search__calendar {
+      display: flex;
+      gap: 0.4rem;
+      img {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+}

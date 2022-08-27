@@ -1,0 +1,106 @@
+.nav {
+  padding: 3rem 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  .nav__logo {
+    display: flex;
+    gap: 1rem;
+    @include respond(phone) {
+      width: 30%;
+    }
+  }
+  .logo__line {
+    height: 4rem;
+    border: 1px solid #0f222b;
+  }
+  .nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    z-index: 1;
+    @include transition;
+    @include respond(tablet) {
+      padding: 3rem;
+      background-color: $color-transparent;
+      border-radius: 4rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      flex-direction: column-reverse;
+      position: absolute;
+      right: 5rem;
+      top: -300%;
+    }
+  }
+  .active {
+    top: 15rem;
+  }
+  .menu__links {
+    display: flex;
+    gap: 3rem;
+    @include respond(tablet) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .links__link {
+    @include transition;
+    &:hover {
+      color: $color-orange;
+    }
+  }
+  .menu__profile {
+    display: flex;
+    gap: 2rem;
+  }
+
+  //burger menu
+  .menu__burger {
+    display: none;
+    @include respond(tablet) {
+      display: block;
+      width: 6rem;
+      height: 6rem;
+      background-color: $color-orange-ish;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      .bar {
+        display: inline-block;
+        width: 4rem;
+        height: 0.5rem;
+        background-color: $color-primary;
+        border-radius: 4rem;
+        position: relative;
+
+        &::after,
+        &::before {
+          content: '';
+          width: 4rem;
+          height: 0.5rem;
+          background-color: $color-primary;
+          border-radius: 4rem;
+          position: absolute;
+          left: 0;
+          @include transition;
+        }
+        &::after {
+          top: 1rem;
+        }
+        &::before {
+          top: -1rem;
+        }
+      }
+    }
+  }
+}
+.nav__menu.active ~ .menu__burger > .bar {
+  background-color: $color-orange-ish;
+}
+.nav__menu.active ~ .menu__burger > .bar::after {
+  transform: translateY(-8px) rotate(45deg);
+}
+.nav__menu.active ~ .menu__burger > .bar::before {
+  transform: translateY(8px) rotate(-45deg);
+}

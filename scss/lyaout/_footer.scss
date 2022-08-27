@@ -1,0 +1,64 @@
+.footer {
+  padding: 15rem 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10rem;
+  @include respond(tablet-land) {
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+  .footer__logo {
+    max-width: 21.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .logo__logo--footer {
+      max-width: 10rem;
+    }
+    .logo__social {
+      display: flex;
+      gap: 2rem;
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .footer__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    h4 {
+      margin-bottom: 0.6rem;
+    }
+    .menu__link {
+      @include transition;
+      &:hover {
+        color: $color-orange;
+      }
+    }
+  }
+  .footer__input {
+    width: 39rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    form {
+      width: 100%;
+      display: flex;
+
+      input {
+        width: 100%;
+        padding-left: 1rem;
+        border: none;
+        border-top-left-radius: 0.6rem;
+        border-bottom-left-radius: 0.6rem;
+        outline: none;
+      }
+    }
+    p {
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.journeys {
+  padding: 15rem 0;
+  display: flex;
+
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @include respond(tablet-land) {
+    padding: 3rem 0 8rem;
+    flex-direction: column-reverse;
+    gap:6rem;
+    text-align: center;
+  }
+  &::before {
+    content: url('../img/plane.svg');
+    position: absolute;
+    top: -5rem;
+    right: -7rem;
+    @include respond(tablet-land) {
+      display: none;
+    }
+  }
+  &::after {
+    content: url('../img/lineWave.svg');
+    position: absolute;
+    top: -5rem;
+    right: 16rem;
+    @include respond(tablet-land) {
+      display: none;
+    }
+  }
+  .journeys__img {
+    z-index: 1;
+  }
+  .journeys__text {
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+}

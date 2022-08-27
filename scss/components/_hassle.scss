@@ -1,0 +1,20 @@
+.hassle {
+  padding: 15rem 0;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+   @include respond(tablet-land) {
+    padding: 3rem 0 8rem;
+    flex-direction: column;
+    gap:6rem;
+    text-align: center;
+  }
+  .hassle__text {
+    max-width: 50rem;
+ 
+
+    .hassle__btn {
+      margin-top: 5rem;
+    }
+  }
+}

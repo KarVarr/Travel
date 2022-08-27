@@ -1,0 +1,17 @@
+.container {
+    margin: 0 auto;
+    padding: 0 12rem;
+    -webkit-mask-position-x: 144rem;
+    background-color: $color-primary;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    @include respond (tablet-land){
+        padding: 0 9rem;
+    }
+    @include respond(tablet) {
+        padding: 0 6rem;
+    }
+    @include respond(phone) {
+        padding: 0 3rem;
+    }
+}
